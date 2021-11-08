@@ -25,6 +25,9 @@ class App extends Component {
 
     deleteSongs = async (songid) => {
         let response = await axios.delete('http://127.0.0.1:8000/music/<int:pk>')
+        this.setState({
+            songs:response.data
+        })
     }
 
     render() {
@@ -32,9 +35,11 @@ class App extends Component {
             <div class='container'>
                 <h1>Music Library</h1>
                 {this.state.songs.length > 0 && 
-                <DisplaySong songs={this.state.songs} getAllSongs= {this.getSongs} />}
+                <DisplaySong songs={this.state.songs} />}
                 <CreateSong />
             </div>
+                
+            
         
         )
     }
