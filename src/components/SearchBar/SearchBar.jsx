@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './SearchBar.css'
 
-class FilterSearch extends Component {
+class SearchBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -52,4 +52,4 @@ class FilterSearch extends Component {
     }
 }
 
-  export default FilterSearch;
+  export default SearchBar;

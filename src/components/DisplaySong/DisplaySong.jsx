@@ -4,7 +4,7 @@ import './DisplaySong.css';
 const DisplaySong = (props) => {
     return (
         <div>
-        <table>
+        <table class="blueTable">
             <tr>
                 <th>Title</th>
                 <th>Artist</th>
@@ -20,7 +20,7 @@ const DisplaySong = (props) => {
                         <td>{song.album}</td>
                         <td>{song.release_date}</td>
                         <td>{song.genre}</td>
-                        <button onClick={() => props.deleteSong(song.id)}>Delete</button>
+                        <button onClick={() => props.deleted(song.id)}>Delete</button>
                     </tr>
                 )
             })}
