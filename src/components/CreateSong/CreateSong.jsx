@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './CreateSong.css'
 
 class CreateSong extends Component {
     state = {
@@ -26,7 +27,7 @@ class CreateSong extends Component {
             genre: this.state.genre,
         };
         let response = axios.post('http://127.0.0.1:8000/music/', form_data);
-        let data = response.data;
+        
     }
 
     render(){
@@ -34,19 +35,19 @@ class CreateSong extends Component {
             <form onSumbit={(event) => this. handleSubmit(event)}>
                 <div>
                     <label>Title: </label>
-                    <input type="text" name="title" onChange={this.handleChange} value={this.state.title}/>
+                    <input placeholder="Song Name" type="text" name="title" onChange={this.handleChange} value={this.state.title}/>
                 </div>
                     <label>Artist: </label>
-                    <input type="text" name="artist" onChange={this.handleChange} value={this.state.artist}/>
+                    <input placeholder="Band/Artist" type="text" name="artist" onChange={this.handleChange} value={this.state.artist}/>
                 <div> 
                     <label>Album: </label>
-                    <input type="text" name="album" onChange={this.handleChange} value={this.state.album}/>
+                    <input placeholder="Album Name" type="text" name="album" onChange={this.handleChange} value={this.state.album}/>
                 </div>
                     <label>Release Date: </label>
-                    <input type="text" name="release_date" onChange={this.handleChange} value={this.state.release_date}/>
+                    <input placeholder="0000-00-0T00:00:00Z" type="text" name="release_date" onChange={this.handleChange} value={this.state.release_date}/>
                 <div>
                     <label>Genre: </label>
-                    <input type="text" name="genre" onChange={this.handleChange} value={this.state.genre}/>
+                    <input placeholder="Alternative" type="text" name="genre" onChange={this.handleChange} value={this.state.genre}/>
                 </div>
 
                 <button type="submit">Add Song to Library</button>

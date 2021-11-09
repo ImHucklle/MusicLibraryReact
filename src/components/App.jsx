@@ -3,6 +3,7 @@ import './App.css'
 import axios from 'axios';
 import DisplaySong from './DisplaySong/DisplaySong';
 import CreateSong from './CreateSong/CreateSong';
+import FilterSearch from './SearchBar/SearchBar';
 
 class App extends Component {
     constructor(props) {
@@ -30,12 +31,18 @@ class App extends Component {
         })
     }
 
+    filterSongs = (filtered) => {
+        this.setState({
+            songs:filtered
+        })
+    }
+
     render() {
         return (
             <div class='container'>
                 <h1>Music Library</h1>
-                {this.state.songs.length > 0 && 
-                <DisplaySong songs={this.state.songs} />}
+                <FilterSearch search={this.state.songs} filterAction={this.filterSongs}/>
+                {this.state.songs.length > 0 && <DisplaySong songs={this.state.songs} />}
                 <CreateSong />
             </div>
                 
