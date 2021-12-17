@@ -33,7 +33,7 @@ class CreateSong extends Component {
     render(){
         return(
             
-            <form class="form" onSumbit={(event) => this. handleSubmit(event)}>
+            <form class="form" onSubmit={(event) => this. handleSubmit(event)}>
                 <h2>Add Songs</h2>
                 <div>
                     <label>Title: </label>
@@ -46,7 +46,7 @@ class CreateSong extends Component {
                     <input placeholder="Album Name" type="text" name="album" onChange={this.handleChange} value={this.state.album}/>
                 </div>
                     <label>Release Date: </label>
-                    <input placeholder="0000-00-0T00:00:00Z" type="text" name="release_date" onChange={this.handleChange} value={this.state.release_date}/>
+                    <input placeholder="0000-00-0T00:00:00Z" type="date" name="release_date" onChange={this.handleChange} value={this.state.release_date}/>
                 <div>
                     <label>Genre: </label>
                     <input placeholder="Alternative" type="text" name="genre" onChange={this.handleChange} value={this.state.genre}/>

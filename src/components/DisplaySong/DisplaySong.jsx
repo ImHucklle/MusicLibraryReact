@@ -12,15 +12,15 @@ const DisplaySong = (props) => {
                 <th>Release Date</th>
                 <th>Genre</th>
             </tr>
-            {props.songs.map((song)=> {
+            {props.songs.map((songs)=> {
                 return (
                     <tr>
-                        <td>{song.title}</td>
-                        <td>{song.artist}</td>
-                        <td>{song.album}</td>
-                        <td>{song.release_date}</td>
-                        <td>{song.genre}</td>
-                        <button onClick={() => props.deleted(song.id)}>Delete</button>
+                        <td>{songs.title}</td>
+                        <td>{songs.artist}</td>
+                        <td>{songs.album}</td>
+                        <td>{songs.release_date}</td>
+                        <td>{songs.genre}</td>
+                        <button onClick={() => props.deleteSongs(songs.id)}>Delete</button>
                     </tr>
                 )
             })}
